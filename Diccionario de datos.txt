@@ -1,0 +1,48 @@
+Tabla: Articulos
+
+ID (PK): Identificador único del artículo (entero).
+Nombre: Nombre del artículo (cadena de texto, máximo 50 caracteres).
+Cantidad en Stock: Cantidad en stock del artículo (número decimal, precisión de doble punto flotante).
+ID_Tipo (FK): Identificador del tipo de artículo (entero pequeño, TINYINT).
+Fecha de Vencimiento: Fecha de vencimiento del artículo (fecha, formato DATE).
+
+--
+
+Tabla: Articulos_tipo
+
+ID (PK): Identificador único del tipo de artículo (entero pequeño, TINYINT).
+Descripción: Descripción del tipo de artículo (cadena de texto, máximo 100 caracteres).
+
+--
+
+Tabla: Usuarios
+
+ID (PK): Identificador único del usuario (entero).
+Nombre de Usuario: Nombre de usuario (cadena de texto, máximo 50 caracteres).
+Contraseña: Contraseña del usuario (cadena de texto cifrada, máximo 100 caracteres).
+ID_Ocupación (FK): Identificador de la ocupación del usuario (entero pequeño, TINYINT).
+
+--
+
+Tabla: Ocupación
+
+ID (PK): Identificador único de la ocupación (entero pequeño, TINYINT).
+Descripción: Descripción de la ocupación (cadena de texto, máximo 30 caracteres).
+
+--
+
+Tabla: Informe
+
+ID (PK): Identificador único del informe (entero).
+ID_Usuario (FK): Identificador del usuario que genera el informe (entero).
+ID_Articulo (FK): Identificador del artículo asociado al informe (entero).
+ID_Tipo_Movimiento (FK): Identificador del tipo de movimiento (entrada, salida, etc.) (entero pequeño, TINYINT).
+Cantidad: Cantidad involucrada en el movimiento (entero).
+Fecha y Hora: Fecha y hora del informe (fecha y hora, formato DATETIME).
+
+--
+
+Tabla: Movimiento
+
+ID_Tipo (PK): Identificador único del tipo de movimiento (entero pequeño, TINYINT).
+Descripción: Descripción del tipo de movimiento (cadena de texto, máximo 20 caracteres).
